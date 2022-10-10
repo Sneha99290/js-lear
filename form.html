@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="enter your name"><br>
+        <input type="number" placeholder="enter your age"><br>
+        <input type="email" placeholder="enter your mail id"><br>
+        <input type="text" placeholder="qualification" id="qual">
+        <a href="" >+</a><br>
+        <button>Submit</button>
+        <script>
+            let anchor = document.querySelector("a")
+            anchor.onclick = function(event)
+            {
+                event.preventDefault()
+                let inp = document.createElement("input")
+                let input = document.getElementById("qual")
+                input.insertAdjacentElement("afterend",inp)
+            }
+        </script>
+    </form>
+</body>
+</html>

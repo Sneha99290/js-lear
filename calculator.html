@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter num1" id="inp1">
+    <input type="text" placeholder="Enter num2" id="inp2">
+    <button>Add</button>
+    <select name="" id="Operation">
+        <option value="">Operation</option>
+        <option value="+">Add</option>
+        <option value="-">Subtract</option>
+        <option value="*">Multiply</option>
+        <option value="/">Divide</option>
+        <option value="%">Modulus</option>
+    </select>
+    <script>
+        // document.querySelector("button").
+        // onclick = function()
+        // {
+        //     let inp1=Number(document.querySelector("#inp1").value)
+        //     let inp2=Number(document.querySelector("#inp2").value)
+        //     console.log(inp1+inp2)
+            
+        // }
+        // // if button is not present but we still want the ouptut of addition of numbers
+        // document.querySelector("#inp2").onblur = function()
+        // {
+        //     let inp1=Number(document.querySelector("#inp1").value)
+        //     let inp2=Number(document.querySelector("#inp2").value)
+        //     console.log(inp1+inp2)
+        // }
+        document.querySelector("select").onchange = function()
+        {
+            let inp1=Number(document.querySelector("#inp1").value)
+            let inp2=Number(document.querySelector("#inp2").value)
+            if(document.querySelector("select").value==='+')
+            {
+                console.log(inp1+inp2)
+            }
+            if(document.querySelector("select").value==='-')
+            {
+                console.log(inp1-inp2)
+            }
+            if(document.querySelector("select").value==='*')
+            {
+                console.log(inp1*inp2)
+            }
+            if(document.querySelector("select").value==='/')
+            {
+                console.log(inp1/inp2)
+            }
+            if(document.querySelector("select").value==='%')
+            {
+                console.log(inp1%inp2)
+            }
+        }
+    </script>
+</body>
+</html>

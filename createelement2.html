@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <input id="entry" type="text" placeholder="enter para">
+        <select name="" id="How many times">
+            <option value="">How many times</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+        </select>
+    </div>
+    
+    <script>
+        document.querySelector("select").onchange = function()
+        {
+           let para = document.getElementById("entry")
+           let div = document.createElement("div")
+           let select = document.getElementById("How many times")
+           let value = select.options[select.selectedIndex].text
+           for(i=0;i<value;i++)
+           {
+            // console.log(i)
+            let p = document.createElement("p")
+            p.innerText = para.value
+            div.appendChild(p)
+            // document.getElementById("wrapper").appendChild(div)
+           }
+           document.getElementById("wrapper").appendChild(div)
+            
+            // let p = document.createElement("p")
+            // p.innerText=newpara.value
+            // // p.id = "o"
+            // // console.log(p)
+            // document.getElementById("wrapper").appendChild(p)
+        }
+        
+    </script>
+</body>
+</html>
