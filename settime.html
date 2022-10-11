@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="write tour friend's name" id="inp1">
+    <button id="add">Add to Array</button>
+    <button id="print">Print Names</button>
+    <div id="wrapper"></div>
+    <script>
+        let arr = []
+        document.querySelector("#add").onclick = function()
+        {
+            let str = document.querySelector("#inp1").value
+            
+            arr.push(str)
+            console.log(arr)
+        }
+        document.querySelector("#print").onclick = function()
+        {
+            let para = document.createElement("p")
+            document.body.appendChild(para)
+            let counter = 0
+            let interval = setInterval(function(){
+                // let counter = 0
+                if(counter===arr.length-1)
+                {
+                    para.innerHTML=para.innerHTML+arr[counter++]
+                    clearInterval(interval)
+                }
+                else
+                    para.innerHTML=para.innerHTML+arr[counter++] +","
+            },1000)
+                
+            
+        }
+        // setTimeout, setInterval
+    </script>
+</body>
+</html>
