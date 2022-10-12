@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+
+    </div>
+    <script>
+        let a1 = [22,45,67,89,09,76,54]
+        let a2 = [23,12,43,65,87,98,41]
+        let a3 = []
+        let a4 = a2.reverse()
+        for(i=0;i<a1.length;i++)
+        {
+            a3[i]=a1[i]+a4[i]
+            
+        }
+        console.log(a3)
+        let name = ['sneha','lakshay','naman','rani','wish','gauri','lakshay','wish','nik']
+        for(i=0;i<name.length;i++)
+        {
+            for(j=i+1;j<name.length;j++)
+            {
+                if(name[i]===name[j])
+                {
+                    name.splice(j,1)
+                }
+            }
+            
+        }
+        console.log(name)
+        let input = ["Jaipur","jodhpur","Udaipur","Kanpur","Jammu","Kashmir","Ladakh"]
+        let output = {}
+        input.forEach(function(city){
+            let firstletter = city.slice(0,1).toLowerCase()
+            if(Object.keys(output).includes(firstletter))
+            {
+                
+                output[firstletter].push(city)
+                
+            }
+            else
+            {
+                output[firstletter] = [city]
+            }
+        })
+        
+        console.log(output)
+    </script>
+</body>
+</html>
