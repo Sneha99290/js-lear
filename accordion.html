@@ -30,6 +30,7 @@
   </div>
 <script>
     let allh1 = document.querySelectorAll("h1")
+    
     allh1.forEach(function(h1){
         h1.onclick = function()
         {
@@ -47,9 +48,17 @@
             {
                 h1.nextElementSibling.style.display="none"
                 h1.classList.remove("show")
+                
             }
             else
             {
+                let allP = document.querySelectorAll("p")
+                allP.forEach(function(para){
+                  if(para.style.display==="block")
+                  {
+                    para.style.display="none"
+                  }
+                })
                 h1.nextElementSibling.style.display="block"
                 h1.classList.add("show")
             }
