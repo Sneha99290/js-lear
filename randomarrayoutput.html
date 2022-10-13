@@ -14,19 +14,44 @@
     <div></div>    
     <script>
         let arr = []
+        let alreadyPrinted = []
         document.querySelector("#add").onclick = function()
         {
             let str = document.querySelector("input").value
             arr.push(str)
             console.log(arr)
         }
-        document.querySelector("#print").onclick = function()
+        let btn2 = document.querySelector("#print")
+        btn2.onclick = function()
         {
-            let para = document.createElement("p")
-            let randomIndex = Math.floor(Math.random()*arr.length) 
+            setInterval(function(){
+                if(alreadyPrinted.length === arr.length)
+                    btn2.setAttribute("disabled", "disabled")
+                else{
+                
+                    for(i=0;i<alreadyPrinted.length;i++)
+                    {
+                        let para = document.createElement("p")
+                        para.innerHTML = arr[getARandomValue()]
+                        document.body.appendChild(para)   
+                    }
+                    
+                
+                // let para = document.createElement("p")
+                // para.innerHTML = arr[getARandomValue()]
+                // document.body.appendChild(para)
+                }
+            },1000)
             
-            para.innerHTML = arr[randomIndex]
-            document.getElementById("wrapper").appendChild(para)
+        }
+        function getARandomValue(){
+            let randomValue = Math.floor(Math.random() * arr.length)
+            if(alreadyPrinted.includes(randomValue))
+                return getARandomValue()
+            else{
+                alreadyPrinted.push(randomValue)
+                return randomValue;
+            }
         }
     </script>
 </body>

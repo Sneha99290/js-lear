@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <button>Click</button>
+    </div>
+    <script>
+        document.querySelector("button").onclick = function()
+        {
+            fetch('https://randomuser.me/api/')
+            .then((result)=>{return result.json()})
+            
+            .then((data)=> {console.log(data);showData(data)})
+        }
+        function showData(data)
+        {
+            let image = document.createElement("img")
+            image.setAttribute("src",data.results[0].picture.large)
+            document.body.appendChild(image)
+            let p1=document.createElement("p")
+            p1.innerText = "Name: " + data.results[0].name.first +" "+ data.results[0].name.last
+            document.body.appendChild(p1)
+            let p2=document.createElement("p")
+            p2.innerText = "DOB: " + data.results[0].dob.date
+            document.body.appendChild(p2)
+            let p3=document.createElement("p")
+            p3.innerText = "Age: " + data.results[0].dob.age
+            document.body.appendChild(p3)
+            let p4=document.createElement("p")
+            p4.innerText = "Gender: " + data.results[0].gender
+            document.body.appendChild(p4)
+            let p5=document.createElement("p")
+            p5.innerText = "Address: " + data.results[0].location.street.number + " "+ data.results[0].location.street.name + " " + data.results[0].location.city + " "+ data.results[0].location.state + " " + data.results[0].location.country
+            document.body.appendChild(p5)
+
+        }
+        
+    </script>
+</body>
+</html>
